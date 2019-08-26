@@ -21,6 +21,7 @@ class Image
       @picture.each_with_index do |row, row_number|
         row.each_with_index do |item, col_number|
           ones.each do |found_row_number, found_col_number|
+
             if row_number == found_row_number && col_number == found_col_number
               @picture[row_number -1][col_number] = 1 unless row_number == 0 #up
               @picture[row_number +1][col_number] = 1 unless row_number >= 3 #down
@@ -45,9 +46,9 @@ image = Image.new([
 [0, 0, 0, 1],
 [0, 0, 0, 0]
 ])
-
-# original
-  image.output_image
-    puts image.blur!
-# blurred
-  image.output_image
+#original
+image.output_image
+puts
+image.blur!
+#blurred
+image.output_image
